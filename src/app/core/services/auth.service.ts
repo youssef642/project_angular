@@ -79,7 +79,7 @@ export class AuthService {
   }
 
   isAuthenticated(): boolean {
-    return !!this.currentUserSubject.value;
+    return !this.currentUserSubject.value;
   }
 
   getCurrentUser(): User | null {

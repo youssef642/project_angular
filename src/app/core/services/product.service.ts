@@ -143,7 +143,7 @@ export class ProductService {
         'Smart home controls',
         'Wi-Fi and Bluetooth connectivity'
       ]
-    }
+    },
   ];
 
   constructor() { }

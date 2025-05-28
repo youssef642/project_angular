@@ -5,12 +5,12 @@ import { Product } from '../../shared/models/product.model';
 import { FavoritesService } from '../../core/services/favorites.service';
 import { CartService } from '../../core/services/cart.service';
 import { ProductCardComponent } from '../../shared/components/product-card/product-card.component';
-import { LoadingSpinnerComponent } from '../../shared/components/loading-spinner/loading-spinner.component';
+// import { LoadingSpinnerComponent } from '../../shared/components/loading-spinner/loading-spinner.component';
 
 @Component({
   selector: 'app-favorites',
   standalone: true,
-  imports: [CommonModule, RouterModule, ProductCardComponent, LoadingSpinnerComponent],
+  imports: [CommonModule, RouterModule, ProductCardComponent],
   templateUrl: './favorites.component.html',
   styleUrls: ['./favorites.component.css']
 })

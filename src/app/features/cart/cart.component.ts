@@ -3,14 +3,14 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { CartService } from '../../core/services/cart.service';
 import { CartItem } from '../../shared/models/cart-item.model';
-import { LoadingSpinnerComponent } from '../../shared/components/loading-spinner/loading-spinner.component';
+// import { LoadingSpinnerComponent } from '../../shared/components/loading-spinner/loading-spinner.component';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css'],
   standalone: true,
-  imports: [CommonModule, RouterModule, LoadingSpinnerComponent]
+  imports: [CommonModule, RouterModule]
 })
 export class CartComponent implements OnInit {
   cartItems: CartItem[] = [];

@@ -3,7 +3,7 @@ import { Observable } from "rxjs";
 import { ProductService } from "../../core/services/product.service";
 import { Product } from "../../shared/models/product.model";
 import { ProductCardComponent } from "../../shared/components/product-card/product-card.component";
-import { LoadingSpinnerComponent } from "../../shared/components/loading-spinner/loading-spinner.component";
+// import { LoadingSpinnerComponent } from "../../shared/components/loading-spinner/loading-spinner.component";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 
@@ -16,7 +16,7 @@ import { FormsModule } from "@angular/forms";
     CommonModule,
     FormsModule,
     ProductCardComponent,
-    LoadingSpinnerComponent,
+    
   ],
 })
 export class HomeComponent implements OnInit {

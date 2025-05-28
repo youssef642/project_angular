@@ -1,9 +1,9 @@
 <div class="favorites-container">
   <h1 class="page-title">My Favorites</h1>
 
-  <ng-container *ngIf="isLoading">
+  <!-- <ng-container *ngIf="isLoading">
     <app-loading-spinner></app-loading-spinner>
-  </ng-container>
+  </ng-container> -->
 
   <ng-container *ngIf="!isLoading">
     <div *ngIf="favorites.length > 0; else emptyState" class="favorites-grid">

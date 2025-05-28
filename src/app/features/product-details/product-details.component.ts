@@ -5,14 +5,14 @@ import { ProductService } from '../../core/services/product.service';
 import { CartService } from '../../core/services/cart.service';
 import { FavoritesService } from '../../core/services/favorites.service';
 import { Product } from '../../shared/models/product.model';
-import { LoadingSpinnerComponent } from '../../shared/components/loading-spinner/loading-spinner.component';
+// import { LoadingSpinnerComponent } from '../../shared/components/loading-spinner/loading-spinner.component';
 
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.css'],
   standalone: true,
-  imports: [CommonModule, LoadingSpinnerComponent]
+  imports: [CommonModule,]
 })
 export class ProductDetailsComponent implements OnInit {
   product: Product | undefined;

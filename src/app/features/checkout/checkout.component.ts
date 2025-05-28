@@ -4,12 +4,12 @@ import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } 
 import { Router } from '@angular/router';
 import { CartService } from '../../core/services/cart.service';
 import { CartItem } from '../../shared/models/cart-item.model';
-import { LoadingSpinnerComponent } from '../../shared/components/loading-spinner/loading-spinner.component';
+// import { LoadingSpinnerComponent } from '../../shared/components/loading-spinner/loading-spinner.component';
 
 @Component({
   selector: 'app-checkout',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, LoadingSpinnerComponent],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.css']
 })
