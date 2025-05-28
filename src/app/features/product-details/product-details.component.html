@@ -1,0 +1,50 @@
+<div class="product-details-container">
+  <ng-container *ngIf="isLoading">
+    <app-loading-spinner></app-loading-spinner>
+  </ng-container>
+
+  <ng-container *ngIf="!isLoading && product">
+    <div class="product-details">
+      <div class="product-image">
+        <img [src]="product.imageUrl" [alt]="product.name">
+        <button class="favorite-btn" [class.active]="isInFavorites()" (click)="toggleFavorite()">
+          <span class="sr-only">Add to favorites</span>
+          ♥
+        </button>
+      </div>
+
+      <div class="product-info">
+        <div class="product-category">{{ product.category }}</div>
+        <h1 class="product-name">{{ product.name }}</h1>
+        <div class="product-rating">
+          <div class="stars">
+            <span class="star" *ngFor="let star of [1,2,3,4,5]" [class.filled]="product.rating >= star">★</span>
+          </div>
+          <span class="rating-value">{{ product.rating }}</span>
+        </div>
+
+        <p class="product-description">{{ product.description }}</p>
+
+        <ul class="product-features">
+          <li *ngFor="let feature of product.features">{{ feature }}</li>
+        </ul>
+
+        <div class="product-price">${{ product.price.toFixed(2) }}</div>
+
+        <div class="quantity-selector">
+          <button (click)="updateQuantity(-1)" [disabled]="quantity <= 1">-</button>
+          <span>{{ quantity }}</span>
+          <button (click)="updateQuantity(1)" [disabled]="quantity >= product.stock">+</button>
+        </div>
+
+        <button class="add-to-cart-btn" (click)="addToCart()" [disabled]="!product.stock">
+          Add to Cart
+        </button>
+
+        <div class="stock-info" [class.low-stock]="product.stock < 5">
+          {{ product.stock }} items left in stock
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
