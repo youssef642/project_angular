@@ -16,7 +16,6 @@ import { CheckoutComponent } from './features/checkout/checkout.component';
 import { LoginComponent } from './features/auth/login/login/login.component';
 import { RegisterComponent } from "./features/auth/register/register/register.component";
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
-// import { LoadingSpinnerComponent } from './shared/components/loading-spinner/loading-spinner.component';
 
 // This file is no longer needed because AppComponent is standalone.
 // You can delete this file.

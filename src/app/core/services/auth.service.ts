@@ -32,7 +32,6 @@ export class AuthService {
   login(email: string, password: string): Observable<User> {
     // Simulate API call
     const user = this.users.find(u => u.email === email && u.password === password);
-    
     if (user) {
       return of(user).pipe(
         delay(800), // Simulate network delay
@@ -49,6 +48,7 @@ export class AuthService {
   }
 
   register(user: User): Observable<User> {
+    console.log('Register called with:', user);
     // Check if email already exists
     if (this.users.some(u => u.email === user.email)) {
       return throwError(() => new Error('Email already exists'));
@@ -79,7 +79,7 @@ export class AuthService {
   }
 
   isAuthenticated(): boolean {
-    return !this.currentUserSubject.value;
+    return !!!this.currentUserSubject.value;
   }
 
   getCurrentUser(): User | null {
