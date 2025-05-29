@@ -236,6 +236,74 @@ export class ProductService {
         "Base of Musk and Sandalwood",
       ],
     },
+    {
+      id: 9,
+      name: 'Essence Mascara Lash Princess',
+      description: 'The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.',
+      price: 9.99,
+      imageUrl: 'https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp',
+      category: 'Fashion',
+      rating: 4.8,
+      stock: 8,
+      features: [
+        'Conic Shape Fiber Brush',
+        'Gentle on Eyes',
+        'Long-Lasting',
+        'False Lash Effect',
+        'Waterproof Option'
+      ]
+    },
+    {
+      id: 10,
+      name: 'Dog Food',
+      description: 'Specially formulated dog food designed to provide essential nutrients for your canine companion.',
+      price: 10.99,
+      imageUrl: 'https://cdn.dummyjson.com/product-images/groceries/dog-food/1.webp',
+      category: 'Groceries',
+      rating: 4.1,
+      stock: 30,
+      features: [
+        'Essential Nutrients',
+        'AAFCO Statement',
+        'Protein Sources',
+        'Fat Sources',
+        'Digestible Ingredients'
+      ]
+    },
+    {
+      id: 11,
+      name: 'Honey Jar',
+      description: 'Pure and natural honey in a convenient jar, perfect for sweetening beverages or drizzling over food.',
+      price: 6.99,
+      imageUrl: 'https://cdn.dummyjson.com/product-images/groceries/honey-jar/1.webp',
+      category: 'Groceries',
+      rating: 3.6,
+      stock: 10,
+      features: [
+        'Honey Dipper or Plunger',
+        'Wide Mouth',
+        'Heat Resistance',
+        'Decorative Elements',
+        'Environmental Impact'
+      ]
+    },
+    {
+      id: 19,
+      name: 'Gucci Bloom Eau de',
+      description: 'Gucci Bloom by Gucci is a floral and captivating fragrance, with notes of tuberose, jasmine, and Rangoon creeper.',
+      price: 79.99,
+      imageUrl: 'https://cdn.dummyjson.com/product-images/fragrances/gucci-bloom-eau-de/1.webp',
+      category: 'Makeup',
+      rating: 4.9,
+      stock: 7,
+      features: [
+        'top notes of Neroli',
+        'Mandarin Orange, and Lemon',
+        'Combined with middle notes of Tuberose',
+        'Orange Blossom',
+        'Base of Musk and Sandalwood'
+      ]
+    },
   ];
 
   constructor() {}

@@ -29,7 +29,6 @@ export class AuthService {
 
   login(email: string, password: string): Observable<User> {
     const user = this.users.find(u => u.email === email && u.password === password);
-    
     if (user) {
       return of(user).pipe(
         delay(100), 

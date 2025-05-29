@@ -7,6 +7,9 @@ import { FavoritesComponent } from './features/favorites/favorites.component';
 import { CheckoutComponent } from './features/checkout/checkout.component';
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 import { authGuard } from './core/guards/auth.guard';
+import { LoginComponent } from './features/auth/login/login/login.component';
+import { RegisterComponent } from './features/auth/register/register/register.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,7 +21,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes) , FormsModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
