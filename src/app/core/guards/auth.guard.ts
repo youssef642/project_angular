@@ -10,7 +10,6 @@ export const authGuard = () => {
     return true;
   }
   
-  // Store the attempted URL for redirecting after login
   router.navigate(['/login'], { queryParams: { returnUrl: router.url } });
   return false;
 };

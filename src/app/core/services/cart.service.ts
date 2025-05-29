@@ -11,7 +11,6 @@ export class CartService {
   public cartItems$ = this.cartItemsSubject.asObservable();
   
   constructor() {
-    // Load cart from localStorage if exists
     const storedCart = localStorage.getItem('cart');
     if (storedCart) {
       this.cartItemsSubject.next(JSON.parse(storedCart));
@@ -27,7 +26,6 @@ export class CartService {
     const existingItemIndex = currentCart.findIndex(item => item.product.id === product.id);
     
     if (existingItemIndex !== -1) {
-      // Product already exists in cart, update quantity
       const updatedCart = [...currentCart];
       updatedCart[existingItemIndex] = {
         ...updatedCart[existingItemIndex],
@@ -35,12 +33,10 @@ export class CartService {
       };
       this.cartItemsSubject.next(updatedCart);
     } else {
-      // Product not in cart, add new item
       const newCart = [...currentCart, { product, quantity }];
       this.cartItemsSubject.next(newCart);
     }
     
-    // Save to localStorage
     this.saveCartToLocalStorage();
   }
 

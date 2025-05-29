@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of, throwError } from 'rxjs';
 import { delay, tap } from 'rxjs/operators';
 import { User } from '../../shared/models/user.model';
@@ -10,7 +10,6 @@ export class AuthService {
   private currentUserSubject = new BehaviorSubject<User | null>(null);
   public currentUser$ = this.currentUserSubject.asObservable();
   
-  // Mock users for demo purposes
   private users: User[] = [
     {
       id: 1,
@@ -22,7 +21,6 @@ export class AuthService {
   ];
 
   constructor() {
-    // Check if user is stored in localStorage
     const storedUser = localStorage.getItem('currentUser');
     if (storedUser) {
       this.currentUserSubject.next(JSON.parse(storedUser));
@@ -30,14 +28,12 @@ export class AuthService {
   }
 
   login(email: string, password: string): Observable<User> {
-    // Simulate API call
     const user = this.users.find(u => u.email === email && u.password === password);
     
     if (user) {
       return of(user).pipe(
-        delay(800), // Simulate network delay
+        delay(100), 
         tap(user => {
-          // Remove password before storing
           const { password, ...userWithoutPassword } = user;
           localStorage.setItem('currentUser', JSON.stringify(userWithoutPassword));
           this.currentUserSubject.next(userWithoutPassword as User);
@@ -49,12 +45,10 @@ export class AuthService {
   }
 
   register(user: User): Observable<User> {
-    // Check if email already exists
     if (this.users.some(u => u.email === user.email)) {
       return throwError(() => new Error('Email already exists'));
     }
     
-    // Simulate API call
     const newUser = {
       ...user,
       id: this.users.length + 1
@@ -63,9 +57,8 @@ export class AuthService {
     this.users.push(newUser);
     
     return of(newUser).pipe(
-      delay(800), // Simulate network delay
+      delay(100), 
       tap(user => {
-        // Remove password before storing
         const { password, ...userWithoutPassword } = user;
         localStorage.setItem('currentUser', JSON.stringify(userWithoutPassword));
         this.currentUserSubject.next(userWithoutPassword as User);
@@ -79,7 +72,7 @@ export class AuthService {
   }
 
   isAuthenticated(): boolean {
-    return !this.currentUserSubject.value;
+    return !!this.currentUserSubject.value;
   }
 
   getCurrentUser(): User | null {

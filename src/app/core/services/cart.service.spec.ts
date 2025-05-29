@@ -10,13 +10,10 @@ describe('CartService', () => {
     TestBed.configureTestingModule({});
     service = TestBed.inject(CartService);
     
-    // Clear localStorage
     localStorage.removeItem('cart');
     
-    // Reset cart
     service.clearCart();
     
-    // Create mock product
     mockProduct = {
       id: 1,
       name: 'Test Product',

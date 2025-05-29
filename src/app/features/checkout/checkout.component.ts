@@ -4,7 +4,6 @@ import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } 
 import { Router } from '@angular/router';
 import { CartService } from '../../core/services/cart.service';
 import { CartItem } from '../../shared/models/cart-item.model';
-// import { LoadingSpinnerComponent } from '../../shared/components/loading-spinner/loading-spinner.component';
 
 @Component({
   selector: 'app-checkout',
@@ -49,13 +48,12 @@ export class CheckoutComponent implements OnInit {
     if (this.checkoutForm.valid) {
       this.isLoading = true;
       
-      // Simulate order processing
       setTimeout(() => {
         this.cartService.clearCart();
         this.router.navigate(['/'], {
           queryParams: { orderSuccess: true }
         });
-      }, 1500);
+      }, 100);
     }
   }
 }

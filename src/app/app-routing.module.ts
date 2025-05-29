@@ -5,8 +5,6 @@ import { ProductDetailsComponent } from './features/product-details/product-deta
 import { CartComponent } from './features/cart/cart.component';
 import { FavoritesComponent } from './features/favorites/favorites.component';
 import { CheckoutComponent } from './features/checkout/checkout.component';
-// import { LoginComponent } from './features/auth/login/login.component';
-// import { RegisterComponent } from './features/auth/register/register.component';
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 import { authGuard } from './core/guards/auth.guard';
 
@@ -16,8 +14,6 @@ const routes: Routes = [
   { path: 'cart', component: CartComponent },
   { path: 'favorites', component: FavoritesComponent },
   { path: 'checkout', component: CheckoutComponent, canActivate: [authGuard] },
-  // { path: 'login', component: LoginComponent },
-  // { path: 'register', component: RegisterComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 

@@ -9,7 +9,7 @@
           <img [src]="item.product.imageUrl" [alt]="item.product.name" class="item-image">
           <div class="item-details">
             <h3>{{ item.product.name }}</h3>
-            <p class="item-price">${{ item.product.price.toFixed(2) }} × {{ item.quantity }}</p>
+            <p class="item-price">${{ item.product.price.toFixed(2) }} * {{ item.quantity }}</p>
           </div>
           <p class="item-total">${{ (item.product.price * item.quantity).toFixed(2) }}</p>
         </div>
